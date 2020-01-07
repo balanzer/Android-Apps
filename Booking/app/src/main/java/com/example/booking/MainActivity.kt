@@ -8,6 +8,39 @@ import com.adobe.marketing.mobile.*
 
 class MainActivity : AppCompatActivity() {
 
+    override fun onRestart() {
+        super.onRestart()
+
+        MobileCore.setApplication(application)
+        MobileCore.setLogLevel(LoggingMode.DEBUG);
+        MobileCore.lifecycleStart(null);
+
+        LogUtil.log("MobileCore Basic setup done - onRestart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        MobileCore.setApplication(application)
+        MobileCore.setLogLevel(LoggingMode.DEBUG);
+        MobileCore.lifecycleStart(null);
+        LogUtil.log("MobileCore Basic setup done - onResume")
+
+       //  MobileCore.trackState("Home Page MTV", null);
+
+
+        val cData = HashMap<String, String>()
+        cData["cd.section"] = "Booking"
+        cData["cd.subSection"] = "Home"
+        MobileCore.trackState("Home Page MTV", cData)
+        MobileCore.trackAction("Home Page Loaded", null);
+
+
+
+
+    }
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +48,8 @@ class MainActivity : AppCompatActivity() {
 
         MobileCore.setApplication(application)
         MobileCore.setLogLevel(LoggingMode.DEBUG);
+        MobileCore.lifecycleStart(null);
+
         LogUtil.log("MobileCore Basic setup done")
 
         setContentView(R.layout.activity_main)
@@ -31,6 +66,7 @@ class MainActivity : AppCompatActivity() {
             Signal.registerExtension()
             MobileCore.start { MobileCore.configureWithAppID("da3424fdbc19/dd1344686da5/launch-acbaf05022bf-development") }
             LogUtil.log("Mobile register extensions - completed")
+
 
         }catch (exp : InvalidInitException){
             LogUtil.log("[Error] message : ${exp.message}")
