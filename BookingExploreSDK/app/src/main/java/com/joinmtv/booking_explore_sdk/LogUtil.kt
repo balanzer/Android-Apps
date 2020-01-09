@@ -10,6 +10,10 @@ class LogUtil {
         fun log(message: String) {
             Log.i(logTag, message);
         }
+
+        fun error(exp: Exception) {
+            Log.e(logTag, exp.message);
+        }
     }
 
 }
