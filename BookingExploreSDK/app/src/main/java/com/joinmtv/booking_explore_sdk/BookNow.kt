@@ -2,7 +2,7 @@ package com.joinmtv.booking_explore_sdk
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.joinmtv.booking_explore_sdk.com.joinmtv.booking_explore_sdk.analytics.HandleAnalytics
+import com.joinmtv.booking_explore_sdk.analytics.HandleAnalytics
 import kotlinx.android.synthetic.main.activity_book_now.*
 
 class BookNow : AppCompatActivity() {

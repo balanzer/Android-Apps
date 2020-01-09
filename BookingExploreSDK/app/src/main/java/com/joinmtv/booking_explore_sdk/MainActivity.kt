@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.adobe.marketing.mobile.*
-import com.joinmtv.booking_explore_sdk.com.joinmtv.booking_explore_sdk.analytics.HandleAnalytics
+import com.joinmtv.booking_explore_sdk.analytics.HandleAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
 
 

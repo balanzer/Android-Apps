@@ -1,4 +1,4 @@
-package com.joinmtv.booking_explore_sdk.com.joinmtv.booking_explore_sdk.analytics
+package com.joinmtv.booking_explore_sdk.analytics
 
 import android.app.Application
 import com.adobe.marketing.mobile.Identity
