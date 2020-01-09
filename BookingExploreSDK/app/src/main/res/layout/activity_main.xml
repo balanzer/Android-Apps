@@ -25,54 +25,62 @@
 
     <Button
         android:id="@+id/buttonAtlanta"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
         android:text="Atlanta, GA, USA"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178" />
+        app:layout_constraintVertical_bias="0.213" />
 
     <Button
         android:id="@+id/buttonNewYork"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New York, NY, USA"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291" />
+        app:layout_constraintVertical_bias="0.42" />
 
     <Button
         android:id="@+id/buttonMiami"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Miami, FL, USA"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178" />
+        app:layout_constraintVertical_bias="0.323" />
 
     <Button
         android:id="@+id/buttonChennai"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chennai, India"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291" />
+        app:layout_constraintVertical_bias="0.524" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
