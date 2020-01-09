@@ -70,8 +70,14 @@ class HandleAnalytics {
             /**
              * Adobe SDK - handle lifecyle events
              */
-            MobileCore.setApplication(application);
-            MobileCore.lifecycleStart(null);
+
+            if (event.equals("pause", true)) {
+                MobileCore.lifecyclePause();
+            } else {
+                MobileCore.setApplication(application);
+                MobileCore.lifecycleStart(null);
+            }
+
 
             /**
              * Adobe SDK - handle lifecyle events - Section Ends

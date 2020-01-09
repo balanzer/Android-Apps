@@ -3,9 +3,68 @@ package com.joinmtv.booking_explore_sdk
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.joinmtv.booking_explore_sdk.com.joinmtv.booking_explore_sdk.analytics.HandleAnalytics
 import kotlinx.android.synthetic.main.activity_search_results.*
 
 class SearchResults : AppCompatActivity() {
+
+
+    override fun onPause() {
+        super.onPause()
+
+        /**
+         * Adobe SDK - handle lifecyle events
+         */
+        HandleAnalytics.handleLifeCyleEvents(application, "pause");
+
+        /**
+         * Adobe SDK - handle lifecyle events - Section Ends
+         */
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+
+        /**
+         * Adobe SDK - handle lifecyle events
+         */
+        HandleAnalytics.handleLifeCyleEvents(application, "resume");
+
+        /**
+         * Adobe SDK - handle lifecyle events - Section Ends
+         */
+
+
+        /**
+         * Adobe SDK - handle visitor
+         */
+
+        /**
+         * rewardsClubNumber & user login status has to be dynamic - remove hard coding later
+         */
+        HandleAnalytics.handleVisitor(152921272, "implicit")
+        /**
+         * Adobe SDK - handle visitor - Section Ends
+         */
+
+        /**
+         * Adobe SDK - handle state changes - analytics
+         */
+
+        HandleAnalytics.handleStateChanges(
+            "Booking : List Hotels",
+            "listhotels",
+            "resume",
+            DataUtil.getDataForState("listhotels")
+        );
+
+        /**
+         * Adobe SDK - handle state changes - Section ends
+         */
+
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +88,22 @@ class SearchResults : AppCompatActivity() {
     }
 
     private fun handleBookButtonClick(hotel: String = "") {
+
+
+        /**
+         * Adobe SDK - handle action changes - analytics
+         */
+
+
+        HandleAnalytics.handleAction(
+            "Book Now Button clicked",
+            DataUtil.getDataForAction("listhotels")
+        )
+        /**
+         * Adobe SDK - handle action changes - Section ends
+         */
+
+
         LogUtil.log("Book Now button pressed")
         val intent = Intent(this, BookNow::class.java)
 
@@ -37,6 +112,21 @@ class SearchResults : AppCompatActivity() {
     }
 
     private fun handleDetailsButtonClick(hotel: String = "") {
+
+        /**
+         * Adobe SDK - handle action changes - analytics
+         */
+
+
+        HandleAnalytics.handleAction(
+            "Hotel Details Button clicked",
+            DataUtil.getDataForAction("listhotels")
+        )
+        /**
+         * Adobe SDK - handle action changes - Section ends
+         */
+
+
         LogUtil.log("Hotel Details button pressed")
         val intent = Intent(this, HotelDetails::class.java)
 

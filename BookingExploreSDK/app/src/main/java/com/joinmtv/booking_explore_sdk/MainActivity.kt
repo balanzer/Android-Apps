@@ -13,6 +13,20 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
 
+    override fun onPause() {
+        super.onPause()
+
+        /**
+         * Adobe SDK - handle lifecyle events
+         */
+        HandleAnalytics.handleLifeCyleEvents(application, "pause");
+
+        /**
+         * Adobe SDK - handle lifecyle events - Section Ends
+         */
+    }
+
+
     override fun onResume() {
         super.onResume()
 
@@ -119,7 +133,7 @@ class MainActivity : AppCompatActivity() {
         listIntent.putExtra("destination", destination);
 
         /**
-         * Adobe SDK - handle state changes - analytics
+         * Adobe SDK - handle action changes - analytics
          */
 
 
@@ -128,7 +142,7 @@ class MainActivity : AppCompatActivity() {
             DataUtil.getDataForAction("home")
         )
         /**
-         * Adobe SDK - handle state changes - Section ends
+         * Adobe SDK - handle action changes - Section ends
          */
 
 
