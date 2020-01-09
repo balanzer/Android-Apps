@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Booking-Explore-SDK</string>
+    <string name="app_name">Booking</string>
+    <string name="title_activity_list_hotels">ListHotels</string>
 </resources>
