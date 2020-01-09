@@ -14,6 +14,15 @@ class MainActivity : AppCompatActivity() {
         buttonAtlanta.setOnClickListener { view ->
             handleButtonClick("Atlanta, GA, USA")
         }
+        buttonChennai.setOnClickListener { view ->
+            handleButtonClick("Chennai, India")
+        }
+        buttonMiami.setOnClickListener { view ->
+            handleButtonClick("Miami, FL, USA")
+        }
+        buttonNewYork.setOnClickListener { view ->
+            handleButtonClick("New York, NY, USA")
+        }
     }
 
     private fun handleButtonClick(destination: String = "") {
