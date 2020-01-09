@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.adobe.marketing.mobile.*
 
 
-
 class MainActivity : AppCompatActivity() {
 
     override fun onRestart() {
@@ -16,6 +15,9 @@ class MainActivity : AppCompatActivity() {
         MobileCore.lifecycleStart(null);
 
         LogUtil.log("MobileCore Basic setup done - onRestart")
+
+        triggerAnalytics()
+
     }
 
     override fun onResume() {
@@ -26,21 +28,13 @@ class MainActivity : AppCompatActivity() {
         MobileCore.lifecycleStart(null);
         LogUtil.log("MobileCore Basic setup done - onResume")
 
-       //  MobileCore.trackState("Home Page MTV", null);
+        //  MobileCore.trackState("Home Page MTV", null);
 
 
-        val cData = HashMap<String, String>()
-        cData["cd.section"] = "Booking"
-        cData["cd.subSection"] = "Home"
-        MobileCore.trackState("Home Page MTV", cData)
-        MobileCore.trackAction("Home Page Loaded", null);
-
-
+        triggerAnalytics()
 
 
     }
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         LogUtil.log("MainActivity->onCreate - completed")
 
 
-        try{
+        try {
             LogUtil.log("Mobile register extensions - start")
 
             Analytics.registerExtension()
@@ -68,8 +62,30 @@ class MainActivity : AppCompatActivity() {
             LogUtil.log("Mobile register extensions - completed")
 
 
-        }catch (exp : InvalidInitException){
+        } catch (exp: InvalidInitException) {
             LogUtil.log("[Error] message : ${exp.message}")
         }
+
+
+        triggerAnalytics()
+
+    }
+
+    private fun triggerAnalytics() {
+
+        val cData = HashMap<String, String>();
+        cData["cd.section"] = "Booking"
+        cData["cd.subSection"] = "Home"
+        cData["ensightentriggered"] = "true"
+        cData["app_platform"] = "Pixel 3 API 29"
+        cData["app_subsection"] = "HOME MTV Load"
+
+
+
+
+        MobileCore.trackState("State Mobile Activity Loaded", null)
+
+        // MobileCore.trackState("Home Page MTV", cData)
+        MobileCore.trackAction("Action Mobile Activity Home Loaded", null);
     }
 }
