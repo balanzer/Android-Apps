@@ -6,10 +6,55 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.adobe.marketing.mobile.*
+import com.joinmtv.booking_explore_sdk.com.joinmtv.booking_explore_sdk.analytics.HandleAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
+
+
+    override fun onResume() {
+        super.onResume()
+
+        /**
+         * Adobe SDK - handle lifecyle events
+         */
+        HandleAnalytics.handleLifeCyleEvents(application, "resume");
+
+        /**
+         * Adobe SDK - handle lifecyle events - Section Ends
+         */
+
+
+        /**
+         * Adobe SDK - handle visitor
+         */
+
+        /**
+         * rewardsClubNumber & user login status has to be dynamic - remove hard coding later
+         */
+        HandleAnalytics.handleVisitor(152921272, "implicit")
+        /**
+         * Adobe SDK - handle visitor - Section Ends
+         */
+
+        /**
+         * Adobe SDK - handle state changes - analytics
+         */
+
+        HandleAnalytics.handleStateChanges(
+            "Booking : Home",
+            "home",
+            "resume",
+            DataUtil.getDataForState("home")
+        );
+
+        /**
+         * Adobe SDK - handle state changes - Section ends
+         */
+
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +108,8 @@ class MainActivity : AppCompatActivity() {
         buttonNewYork.setOnClickListener { view ->
             handleButtonClick("New York, NY, USA")
         }
+
+
     }
 
     private fun handleButtonClick(destination: String = "") {
@@ -70,6 +117,21 @@ class MainActivity : AppCompatActivity() {
         val listIntent = Intent(this, SearchResults::class.java)
 
         listIntent.putExtra("destination", destination);
+
+        /**
+         * Adobe SDK - handle state changes - analytics
+         */
+
+
+        HandleAnalytics.handleAction(
+            "List Hotels Button clicked",
+            DataUtil.getDataForAction("home")
+        )
+        /**
+         * Adobe SDK - handle state changes - Section ends
+         */
+
+
         startActivity(listIntent)
     }
 }
