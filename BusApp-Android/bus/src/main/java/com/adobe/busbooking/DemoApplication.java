@@ -44,6 +44,7 @@ public class DemoApplication extends Application {
 
          try{
 
+
              Analytics.registerExtension();
              UserProfile.registerExtension();
              Identity.registerExtension();
@@ -55,6 +56,12 @@ public class DemoApplication extends Application {
                      MobileCore.configureWithAppID("da3424fdbc19/f024bfe63ad7/launch-6a4b57679c4b-development");
                  }
              });
+
+
+
+
+
+
           } catch(InvalidInitException e){
              Log.e("error", "exception "+e);
          }
