@@ -20,6 +20,18 @@ package com.adobe.busbooking;
 import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
+import android.util.Log;
+
+
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Analytics;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.InvalidInitException;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
 
 public class DemoApplication extends Application {
 
@@ -27,9 +39,27 @@ public class DemoApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // try{
+        MobileCore.setApplication(this);
+        MobileCore.setLogLevel(LoggingMode.DEBUG);
 
-        //  } catch(InvalidInitException e){}
+         try{
+
+
+             Analytics.registerExtension();
+             UserProfile.registerExtension();
+             Identity.registerExtension();
+             Lifecycle.registerExtension();
+             Signal.registerExtension();
+             MobileCore.start(new AdobeCallback () {
+                 @Override
+                 public void call(Object o) {
+                     MobileCore.configureWithAppID("da3424fdbc19/f024bfe63ad7/launch-6a4b57679c4b-development");
+                 }
+             });
+
+          } catch(InvalidInitException e){
+             Log.e("error", "exception "+e);
+         }
     }
 
     @Override

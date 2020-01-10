@@ -31,6 +31,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.adobe.marketing.mobile.MobileCore;
+
+import java.util.HashMap;
+
 /**
  * This activity class is responsible to show booking engine page and offer card.
  */
@@ -54,6 +58,7 @@ public class BusBookingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 flipSourceDesti();
+                MobileCore.trackAction("Flip Destination", null);
             }
         });
 
@@ -226,6 +231,15 @@ public class BusBookingActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        MobileCore.setApplication(getApplication());
+        MobileCore.lifecycleStart(null);
+
+        HashMap cData = new HashMap<String, String>();
+        cData.put("cd.section", "Bus Booking");
+        cData.put("cd.subSection", "Booking");
+        cData.put("cd.conversionType", "Landing");
+        MobileCore.trackState("Booking Screen", cData);
     }
 
     @Override
