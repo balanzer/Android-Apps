@@ -1,6 +1,7 @@
 package com.joinmtv.booking_explore_sdk.analytics
 
 import android.app.Application
+import com.adobe.marketing.mobile.MobileCore
 // import com.adobe.marketing.mobile.MobileCore
 import com.joinmtv.booking_explore_sdk.LogUtil
 
@@ -37,7 +38,7 @@ class HandleAnalytics {
 
             cData.put("cd.event", event);
             cData.put("cd.viewName", viewName);
-            // MobileCore.trackState(state, cData)
+            MobileCore.trackState(state, cData)
 
             /**
              * Adobe SDK - handle state changes - Section ends

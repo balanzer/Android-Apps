@@ -1,13 +1,13 @@
 package com.joinmtv.booking_explore_sdk
 
 
-// import com.adobe.marketing.mobile.*
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.adobe.marketing.mobile.*
 import com.joinmtv.booking_explore_sdk.analytics.HandleAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         /**
          * Adobe SDK - handle state changes - Section ends
          */
-
+    
 
     }
 
@@ -75,10 +75,10 @@ class MainActivity : AppCompatActivity() {
         /**
          * Adobe SDK - Add Initialization Code
          */
-        /*
+
         MobileCore.setApplication(application);
         MobileCore.setLogLevel(LoggingMode.DEBUG);
-        */
+
         /**
          *  Adobe SDK - Add Initialization Code - Section Ends
          */
@@ -86,10 +86,10 @@ class MainActivity : AppCompatActivity() {
         /**
          * Adobe SDK - Register Extensions
          */
-        /*
+
         try {
 
-            MobileServices.registerExtension();
+            // MobileServices.registerExtension();
             Analytics.registerExtension();
             UserProfile.registerExtension();
             Identity.registerExtension();
@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity() {
             LogUtil.error(exp)
 
         }
-        */
+
         /**
          * Adobe SDK - Register Extensions - Section Ends
          */
