@@ -9,6 +9,8 @@ import com.adobe.marketing.mobile.*
 import com.joinmtv.booking_explore_sdk.analytics.HandleAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
 
+
+
 class MainActivity : AppCompatActivity() {
 
 
@@ -89,14 +91,12 @@ class MainActivity : AppCompatActivity() {
 
         try {
 
-            // MobileServices.registerExtension();
-            Analytics.registerExtension();
-            UserProfile.registerExtension();
-            Identity.registerExtension();
-            Lifecycle.registerExtension();
-            Signal.registerExtension();
-
-            MobileCore.start { MobileCore.configureWithAppID("da3424fdbc19/dd1344686da5/launch-acbaf05022bf-development") }
+            Analytics.registerExtension()
+            Identity.registerExtension()
+            Lifecycle.registerExtension()
+            Signal.registerExtension()
+            UserProfile.registerExtension()
+            MobileCore.start { MobileCore.configureWithAppID("da3424fdbc19/c59f746bb18f/launch-5597ed768a53-development") }
 
         } catch (exp: InvalidInitException) {
             Log.e("error", "InvalidInitException thrown : ${exp.message} ")

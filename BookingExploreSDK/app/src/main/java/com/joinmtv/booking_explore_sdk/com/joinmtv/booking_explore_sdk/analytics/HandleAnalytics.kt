@@ -38,6 +38,7 @@ class HandleAnalytics {
 
             cData.put("cd.event", event);
             cData.put("cd.viewName", viewName);
+
             MobileCore.trackState(state, cData)
 
             /**
@@ -53,7 +54,7 @@ class HandleAnalytics {
              * Adobe SDK - handle state changes - analytics
              */
 
-            // MobileCore.trackAction(action, cData)
+             MobileCore.trackAction(action, cData)
 
             /**
              * Adobe SDK - handle state changes - Section ends
@@ -71,10 +72,10 @@ class HandleAnalytics {
              */
 
             if (event.equals("pause", true)) {
-                //   MobileCore.lifecyclePause();
+                   MobileCore.lifecyclePause();
             } else {
-                //    MobileCore.setApplication(application);
-                //    MobileCore.lifecycleStart(null);
+                   MobileCore.setApplication(application);
+                  MobileCore.lifecycleStart(null);
             }
 
 
