@@ -44,23 +44,17 @@ public class DemoApplication extends Application {
 
          try{
 
-
              Analytics.registerExtension();
-             UserProfile.registerExtension();
              Identity.registerExtension();
              Lifecycle.registerExtension();
              Signal.registerExtension();
+             UserProfile.registerExtension();
              MobileCore.start(new AdobeCallback () {
                  @Override
                  public void call(Object o) {
-                     MobileCore.configureWithAppID("da3424fdbc19/f024bfe63ad7/launch-6a4b57679c4b-development");
+                     MobileCore.configureWithAppID("da3424fdbc19/c59f746bb18f/launch-5597ed768a53-development");
                  }
              });
-
-
-
-
-
 
           } catch(InvalidInitException e){
              Log.e("error", "exception "+e);
