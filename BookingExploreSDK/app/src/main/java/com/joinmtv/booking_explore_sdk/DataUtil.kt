@@ -15,6 +15,12 @@ class DataUtil {
             cData["cd.currencyCode"] = "USD"
             cData["cd.rateCode"] = "6CBARC"
 
+            cData.put("&&events", "event1");
+            cData.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99");
+            cData.put("myapp.purchase", "1");
+            cData.put("myapp.purchaseid", "1234567890");
+
+
 
             LogUtil.log("trackState -> Data For ${view} : ${cData}")
 

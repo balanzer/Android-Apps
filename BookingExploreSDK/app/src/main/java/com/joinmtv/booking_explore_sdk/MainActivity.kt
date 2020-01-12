@@ -98,6 +98,8 @@ class MainActivity : AppCompatActivity() {
             UserProfile.registerExtension()
             MobileCore.start { MobileCore.configureWithAppID("da3424fdbc19/c59f746bb18f/launch-5597ed768a53-development") }
 
+
+
         } catch (exp: InvalidInitException) {
             Log.e("error", "InvalidInitException thrown : ${exp.message} ")
             LogUtil.error(exp)
