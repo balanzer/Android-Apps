@@ -6,9 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.adobe.marketing.mobile.*
+import com.adobe.marketing.mobile.Target
+import com.adobe.target.mobile.TargetVEC
 import com.joinmtv.booking_explore_sdk.analytics.HandleAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         /**
          * Adobe SDK - handle state changes - Section ends
          */
-    
+
 
     }
 
@@ -90,14 +91,14 @@ class MainActivity : AppCompatActivity() {
          */
 
         try {
-
+            TargetVEC.registerExtension()
+            Target.registerExtension()
             Analytics.registerExtension()
             Identity.registerExtension()
             Lifecycle.registerExtension()
             Signal.registerExtension()
             UserProfile.registerExtension()
             MobileCore.start { MobileCore.configureWithAppID("da3424fdbc19/c59f746bb18f/launch-5597ed768a53-development") }
-
 
 
         } catch (exp: InvalidInitException) {
