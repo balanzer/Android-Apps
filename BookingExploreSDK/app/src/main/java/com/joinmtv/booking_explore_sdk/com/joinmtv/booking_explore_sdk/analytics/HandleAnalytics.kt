@@ -38,8 +38,8 @@ class HandleAnalytics {
 
             //val cData = DataUtil.getDataForState(viewName);
 
-            cData.put("cd.event", event);
-            cData.put("cd.viewName", viewName);
+            //cData.put("cd.event", event);
+            //cData.put("cd.viewName", viewName);
 
             MobileCore.trackState(state, cData)
 
