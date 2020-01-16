@@ -34,7 +34,7 @@ class DataUtil {
 
             cData.put(
                 "&&products",
-                ";ATLCP;1;69.95;event1=5.5"
+                ";ATLCP;1;69.95"
             );
 
 
