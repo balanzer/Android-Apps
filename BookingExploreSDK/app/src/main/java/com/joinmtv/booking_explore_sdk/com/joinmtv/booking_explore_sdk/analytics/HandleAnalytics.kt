@@ -1,7 +1,9 @@
 package com.joinmtv.booking_explore_sdk.analytics
 
 import android.app.Application
+import com.adobe.marketing.mobile.Identity
 import com.adobe.marketing.mobile.MobileCore
+import com.adobe.marketing.mobile.VisitorID
 // import com.adobe.marketing.mobile.MobileCore
 import com.joinmtv.booking_explore_sdk.LogUtil
 
@@ -16,7 +18,7 @@ class HandleAnalytics {
 
             identifiers.put("ihgCRM", rewardsClubNumber.toString());
             identifiers.put("pcr_id", rewardsClubNumber.toString());
-            // Identity.syncIdentifiers(identifiers, VisitorID.AuthenticationState.AUTHENTICATED)
+            Identity.syncIdentifiers(identifiers, VisitorID.AuthenticationState.AUTHENTICATED)
             /**
              * Handle AuthenticationState based on login status - implicit, explicit or anonymous
              */
@@ -54,7 +56,7 @@ class HandleAnalytics {
              * Adobe SDK - handle state changes - analytics
              */
 
-             MobileCore.trackAction(action, cData)
+            MobileCore.trackAction(action, cData)
 
             /**
              * Adobe SDK - handle state changes - Section ends
@@ -72,10 +74,10 @@ class HandleAnalytics {
              */
 
             if (event.equals("pause", true)) {
-                   MobileCore.lifecyclePause();
+                MobileCore.lifecyclePause();
             } else {
-                   MobileCore.setApplication(application);
-                  MobileCore.lifecycleStart(null);
+                MobileCore.setApplication(application);
+                MobileCore.lifecycleStart(null);
             }
 
 

@@ -9,17 +9,33 @@ class DataUtil {
         fun getDataForState(view: String = ""): HashMap<String, String> {
             val cData = HashMap<String, String>()
             cData["mobileSDK"] = "true"
-            cData["cd.section"] = view.toUpperCase();
-            cData["cd.hotelCode"] = "ATLCP"
-            cData["cd.searchText"] = "Atlanta, GA, USA"
-            cData["cd.currencyCode"] = "USD"
-            cData["cd.rateCode"] = "6CBARC"
+            cData["page.name"] = view.toUpperCase();
+            cData["page.language"] = "en";
+            cData["page.brand"] = "6c";
+            cData["page.section"] = view.toUpperCase();
+            cData["booking.hotelCode"] = "ATLCP"
+            cData["search.destination"] = "Atlanta, GA, USA"
+            cData["booking.currencyCode"] = "INR"
+            cData["booking.selectedRateCodes"] = "6CBARC"
+
+            cData["booking.confirmationNumber"] = "123121212";
+            cData["booking.bookingTotalUSD"] = "69.95";
+            cData["booking.bookingTotal"] = "4000";
+            cData["booking.tax"] = "650";
+            cData["booking.unitPrice"] = "3500";
+            cData["booking.taxUSD"] = "9.95";
+            cData["booking.unitPriceUSD"] = "60.00";
+            cData["booking.roomNights"] = "2";
+            cData["booking.roomCount"] = "1";
+            cData["booking.adultCount"] = "2";
+
 
             cData.put("&&events", "event1");
-            cData.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99");
-            cData.put("myapp.purchase", "1");
-            cData.put("myapp.purchaseid", "1234567890");
 
+            cData.put(
+                "&&products",
+                ";ATLCP;1;69.95;event1=5.5"
+            );
 
 
             LogUtil.log("trackState -> Data For ${view} : ${cData}")
